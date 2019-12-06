@@ -6,6 +6,7 @@ int main(int argc, char *argv[]) {
 	
 	FILE *output = fopen("output.wav", "wb");
 	
+	/* Write one second of a square wave of ~440hz to the buffer. */
 	uint16_t *buffer = malloc(44100 * sizeof(uint16_t));
 	for(int i = 0; i < 44100; i++) {
 		buffer = (i % 10) == 0 ? 0xFFFF : 0x0000;	
